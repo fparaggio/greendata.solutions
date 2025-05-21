@@ -1,12 +1,3 @@
-<img src="logo.svg" alt="Greendata Solutions logo" width="300" />
-
-# Francesco Paraggio
-
-**Full Stack Data Scientist**  
-[LinkedIn](https://www.linkedin.com/in/fparaggio/)  
-📍 Piazza Duomo 3, 84067 Santa Marina (SA), Italy  
-📧 francesco _at_ greendata.solutions  
-VAT N. IT06083470655
 
 ## 🔧 Professional Positioning
 
