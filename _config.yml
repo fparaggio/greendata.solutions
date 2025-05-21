@@ -1,3 +1,14 @@
-title: Francesco Paraggio – CV
-description: Personal CV and projects by Francesco Paraggio – greedata.solutions
-theme: jekyll-theme-minimal
+  title: Francesco Paraggio
+description: >
+  Full Stack AI Engineer – Projects and CV
+  greedata.solutions
+
+logo: logo.svg
+
+show_downloads: false
+
+github:
+  is_project_page: false
+
+# Optional: remove "View on GitHub" link
+# You can also add social/contact links here if using custom layout
