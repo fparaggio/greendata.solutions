@@ -1,12 +1,12 @@
-title: Francesco Paraggio
-description: Full Stack AI Engineer – Projects and CV
-logo: logo.svg
+title: Francesco Paraggio 
+description: Full Stack AI Engineer
+theme: jekyll-theme-minimal
 
+logo: logo.svg
 show_downloads: false
 
 github:
   is_project_page: false
 
-theme: jekyll-theme-minimal
 # Optional: remove "View on GitHub" link
 # You can also add social/contact links here if using custom layout
