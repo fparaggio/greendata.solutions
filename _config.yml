@@ -1,14 +1,13 @@
-remote_theme: elipapa/jekyll-cv
+title: greedata.solutions
+description: Personal CVs and Projects
+baseurl: ""  # Root site
+theme: piazzai/cvless
 
-title: "Francesco Paraggio"
-name: "Francesco Paraggio"
-description: "Full Stack AI Engineer – greedata.solutions"
+social:
+  linkedin: https://www.linkedin.com/in/fparaggio/
 
-sidebar:
-  photo: logo.svg
-  email: "francesco _at_ greendata.solutions"
-  location: "Piazza Duomo 3, 84067 Santa Marina (SA), Italy"
-  linkedin: "https://www.linkedin.com/in/fparaggio/"
-  vat: "VAT N. IT06083470655"
-
-markdown: kramdown
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

@@ -1,0 +1,11 @@
+- name: Smart Greenhouses
+  image: greenhouse.jpg
+  description: Real-time telemetry and AI-driven irrigation for greenhouse agriculture. Saved €17,000/ha/year.
+
+- name: Windstack Analytics
+  image: windturbine.jpg
+  description: Rotor diagnostics and SCADA processing tools for wind turbine operators.
+
+- name: EV Charging Platform
+  image: evcharge.jpg
+  description: OCPP-compliant infrastructure with custom embedded logic and payment UX.
