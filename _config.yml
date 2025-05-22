@@ -1,6 +1,14 @@
-theme: jekyll-theme-minimal
-logo: logo.svg
-show_downloads: false
+remote_theme: elipapa/jekyll-cv
 
-github:
-  is_project_page: false
+title: "Francesco Paraggio"
+name: "Francesco Paraggio"
+description: "Full Stack AI Engineer – greedata.solutions"
+
+sidebar:
+  photo: logo.svg
+  email: "francesco _at_ greendata.solutions"
+  location: "Piazza Duomo 3, 84067 Santa Marina (SA), Italy"
+  linkedin: "https://www.linkedin.com/in/fparaggio/"
+  vat: "VAT N. IT06083470655"
+
+markdown: kramdown
