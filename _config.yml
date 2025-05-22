@@ -1,13 +1,20 @@
 title: greedata.solutions
 description: Personal CVs and Projects
-baseurl: ""  # Root site
-theme: piazzai/cvless
+baseurl: ""
 
-social:
-  linkedin: https://www.linkedin.com/in/fparaggio/
+theme: cvless
+
+collections:
+  people:
+    output: true
+    permalink: /:collection/:name/
 
 defaults:
   - scope:
       path: ""
     values:
       layout: default
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
