@@ -13,18 +13,14 @@ From predictive maintenance in aerospace and energy, to machine learning in phar
 
 ## Featured Projects
 
-{% for project in site.data.projects %}
-### {{ project.name }}
-
-{{ project.description }}
-
-{% if project.highlights %}
-{% for highlight in project.highlights %}- {{ highlight }}
-{% endfor %}{% endif %}
-{% endfor %}
+{% include projects.html %}
 
 ---
 
 ## Trusted By
 
 {% include clients.html %}
+
+---
+
+{% include contact-reveal.html %}

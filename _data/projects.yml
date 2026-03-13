@@ -1,16 +1,7 @@
-- name: Smart Greenhouses
-  image: greenhouse.jpg
-  description: >
-    Real-time telemetry and AI-driven irrigation for greenhouse agriculture,
-    combining IoT sensor networks with predictive models for pest detection
-    and resource optimization.
-  highlights:
-    - "Saved €17,000/ha/year through automated irrigation control"
-    - "Deployed edge AI for early pest and disease prediction"
-    - "Integrated with existing SCADA and farm management systems"
-
-- name: Windstack Analytics
+- name: Advanced Laser Intelligence for Dynamic Assets
   image: windturbine.jpg
+  partner: Vestas
+  partner_logo: vestas.svg
   description: >
     Rotor diagnostics and SCADA processing platform for wind turbine operators,
     delivering actionable insights through non-destructive monitoring and
@@ -22,6 +13,8 @@
 
 - name: EV Charging Platform
   image: evcharge.jpg
+  partner: FoxESS
+  partner_logo: foxess.svg
   description: >
     OCPP-compliant electric vehicle charging infrastructure with custom embedded
     logic, payment UX, and real-time fleet management dashboards.
@@ -29,3 +22,16 @@
     - "End-to-end design from embedded firmware to cloud platform"
     - "Integrated payment processing and user authentication"
     - "Real-time monitoring and remote diagnostics for operators"
+
+- name: Superagro.pro
+  image: greenhouse.jpg
+  partner: Altamura OP
+  partner_logo: altamura-op.svg
+  description: >
+    Real-time telemetry and AI-driven irrigation for greenhouse agriculture,
+    combining IoT sensor networks with predictive models for pest detection
+    and resource optimization.
+  highlights:
+    - "Saved €17,000/ha/year through automated irrigation control"
+    - "Deployed edge AI for early pest and disease prediction"
+    - "Integrated with existing SCADA and farm management systems"
