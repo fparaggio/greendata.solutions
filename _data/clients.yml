@@ -1,16 +1,16 @@
 - name: European Union Intellectual Property Office
   short: EUIPO
-  area: AI Architecture & Machine Learning
+  area: Agentic AI Architecture
   logo: EUIPO_logo_in_English.svg
 
 - name: Altia
   short: Altia
-  area: AI Architecture & Machine Learning
+  area: Agentic AI & Bayesian Modeling
   logo: altia_identifier_main.svg
 
 - name: Siemens Energy
   short: Siemens Energy
-  area: Data Science & Machine Learning
+  area: Industrial Bayesian Analytics
   logo: Siemens_Energy_logo.svg.png
 
 - name: Sandoz
@@ -45,7 +45,7 @@
 
 - name: GKN Aerospace
   short: GKN Aerospace
-  area: Industrial Analytics & Aerospace Manufacturing
+  area: Predictive Maintenance
   logo: GKN.svg
 
 - name: SkyWest Airlines
