@@ -1,6 +1,10 @@
-title: greedata.solutions
-description: Personal CVs and Projects
+title: greendata.solutions
+description: AI, Data Science & IoT Engineering for Industry
+taglong: AI · Data Science · IoT Engineering
 baseurl: ""
+
+author:
+  name: Greendata Solutions
 
 theme: cvless
 

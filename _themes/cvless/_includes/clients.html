@@ -1,0 +1,8 @@
+<div class="clients-grid">
+  {% for client in site.data.clients %}
+  <div class="client-card">
+    <img class="client-logo" src="{{ '/assets/img/clients/' | append: client.logo | prepend: site.url }}" alt="{{ client.name }}" />
+    <span class="client-area">{{ client.area }}</span>
+  </div>
+  {% endfor %}
+</div>
