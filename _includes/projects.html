@@ -1,25 +1,38 @@
-<section class="featured-projects">
+<!-- Projects grid — Tailwind CSS -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   {% for project in site.data.projects %}
-  <div class="project-card">
-    <div class="project-partner">
+  <div class="reveal group bg-surface-850 border border-surface-700/40 rounded-2xl p-6 hover:border-brand-500/30 transition-all duration-300">
+
+    <!-- Partner badge with small logo -->
+    <div class="flex items-center gap-2.5 mb-5">
       {% if project.partner_logo %}
-      <img class="project-partner-logo" src="{{ '/assets/img/clients/' | append: project.partner_logo | prepend: site.url }}" alt="{{ project.partner }}" />
+      <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/90 flex items-center justify-center p-1">
+        <img src="{{ '/assets/img/' | append: project.partner_logo | prepend: site.url }}" alt="{{ project.partner }}" class="w-full h-full object-contain" />
+      </div>
       {% endif %}
       {% if project.partner %}
-      <span class="project-partner-name">{{ project.partner }}</span>
+      <span class="text-xs font-mono text-surface-200/60 uppercase tracking-wider">{{ project.partner }}</span>
       {% endif %}
     </div>
-    <div class="project-content">
-      <h3 class="project-title">{{ project.name }}</h3>
-      <p class="project-description">{{ project.description }}</p>
-      {% if project.highlights %}
-      <ul class="project-highlights">
-        {% for highlight in project.highlights %}
-        <li>{{ highlight }}</li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-    </div>
+
+    <!-- Title -->
+    <h3 class="text-lg font-semibold text-white mb-3 group-hover:text-brand-400 transition-colors duration-300">{{ project.name }}</h3>
+
+    <!-- Description -->
+    <p class="text-sm text-surface-200/60 leading-relaxed mb-4">{{ project.description }}</p>
+
+    <!-- Highlights -->
+    {% if project.highlights %}
+    <ul class="space-y-1.5">
+      {% for highlight in project.highlights %}
+      <li class="flex items-start gap-2 text-xs text-surface-200/50">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">›</span>
+        <span>{{ highlight }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
   </div>
   {% endfor %}
-</section>
+</div>

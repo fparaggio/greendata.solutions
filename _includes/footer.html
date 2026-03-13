@@ -1,4 +1,10 @@
-<footer>
-  <small>&copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>
-    {{ site.title }}. All rights reserved.</small>
+<!-- Footer — Tailwind CSS -->
+<footer class="relative z-10 border-t border-surface-700/30 py-8">
+  <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-xs text-surface-200/40 font-mono">
+      &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>
+      {{ site.title }}
+    </p>
+    <p class="text-xs text-surface-200/30">All rights reserved.</p>
+  </div>
 </footer>

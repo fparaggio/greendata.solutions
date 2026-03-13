@@ -1,12 +1,14 @@
-<div class="contact-reveal-section">
-  <button class="contact-reveal-btn" id="gd-reveal-btn" onclick="gdRevealContact()" aria-label="Show contact information">
-    <span>&#9993;&nbsp; Contatti / Contact</span>
+<!-- Contact reveal — Tailwind CSS -->
+<div class="reveal">
+  <button id="gd-reveal-btn" onclick="gdRevealContact()" aria-label="Show contact information"
+    class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-brand-500 text-white font-medium text-sm hover:bg-brand-600 transition-all duration-300 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+    Get in touch
   </button>
-  <div class="contact-info" id="gd-contact" aria-live="polite"></div>
+  <div id="gd-contact" class="hidden flex-col items-center gap-3 mt-8" aria-live="polite"></div>
 </div>
 
 <script>
-/* Contact info is never in the DOM — only decoded on explicit user click */
 (function () {
   var _p1 = 'ZnJhbmNlc2Nv';
   var _p2 = 'QGdyZWVuZGF0YS5zb2x1dGlvbnM=';
@@ -22,12 +24,12 @@
     var phTel = ph.replace(/\s/g, '');
 
     var emailLink = document.createElement('a');
-    emailLink.className = 'contact-link';
+    emailLink.className = 'inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-mono text-sm transition-colors';
     emailLink.href = 'mailto:' + em;
     emailLink.textContent = em;
 
     var phoneLink = document.createElement('a');
-    phoneLink.className = 'contact-link';
+    phoneLink.className = 'inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-mono text-sm transition-colors';
     phoneLink.href = 'tel:' + phTel;
     phoneLink.textContent = ph;
 

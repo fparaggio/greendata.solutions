@@ -1,7 +1,7 @@
 - name: Advanced Laser Intelligence for Dynamic Assets
   image: windturbine.jpg
   partner: Vestas
-  partner_logo: vestas.svg
+  partner_logo: Vestas.svg
   description: >
     Rotor diagnostics and SCADA processing platform for wind turbine operators,
     delivering actionable insights through non-destructive monitoring and
@@ -14,7 +14,7 @@
 - name: EV Charging Platform
   image: evcharge.jpg
   partner: FoxESS
-  partner_logo: foxess.svg
+  partner_logo: clients/foxess.svg
   description: >
     OCPP-compliant electric vehicle charging infrastructure with custom embedded
     logic, payment UX, and real-time fleet management dashboards.
@@ -26,7 +26,7 @@
 - name: Superagro.pro
   image: greenhouse.jpg
   partner: Altamura OP
-  partner_logo: altamura-op.svg
+  partner_logo: altamura-footer.png
   description: >
     Real-time telemetry and AI-driven irrigation for greenhouse agriculture,
     combining IoT sensor networks with predictive models for pest detection
