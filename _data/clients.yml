@@ -27,11 +27,13 @@
   short: Leonardo
   area: Business Innovation Factory Winner
   logo: Logo_Leonardo.svg
+  white_bg: true
 
 - name: Boeing
   short: Boeing
   area: Aerospace Engineering & Data Analytics
   logo: Boeing_full_logo.svg
+  white_bg: true
 
 - name: Rolls-Royce
   short: Rolls-Royce
@@ -57,13 +59,16 @@
   short: Erg S.p.A.
   area: Predictive Maintenance & Technical Assets Optimization
   logo: ERG_logo.svg
+  white_bg: true
 
 - name: Vestas
   short: Vestas
   area: Non-Destructive AI-Based Monitoring
   logo: Vestas.svg
+  white_bg: true
 
 - name: Altamura OP
   short: Altamura OP
   area: Agriculture Monitoring & Pest Prediction
   logo: altamura-footer.png
+  white_bg: true
