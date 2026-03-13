@@ -24,6 +24,7 @@
     - "Real-time monitoring and remote diagnostics for operators"
 
 - name: Superagro.pro
+  url: https://superagro.pro/
   image: greenhouse.jpg
   partner: Altamura OP
   partner_logo: altamura-footer.png
