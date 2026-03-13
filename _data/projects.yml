@@ -1,11 +1,10 @@
-- name: Advanced Laser Intelligence for Dynamic Assets
+- name: Windstack IVS
   image: windturbine.jpg
-  partner: Vestas
-  partner_logo: Vestas.svg
+  partner: ERG S.p.a.
+  partner_logo: ERG_logo.svg
   description: >
-    Rotor diagnostics and SCADA processing platform for wind turbine operators,
-    delivering actionable insights through non-destructive monitoring and
-    predictive maintenance.
+    SCADA processing platform for wind turbine operators, delivering actionable
+    insights through non-destructive monitoring and predictive maintenance.
   highlights:
     - "Reduced unplanned downtime by 30% through predictive analytics"
     - "Processed multi-terabyte SCADA datasets for fleet-wide optimization"
