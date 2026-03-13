@@ -101,6 +101,10 @@
       animation: scroll-left 40s linear infinite;
     }
     .logo-marquee-track:hover { animation-play-state: paused; }
+    .logo-marquee-mask {
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
     @keyframes scroll-left {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
