@@ -3,6 +3,11 @@
   area: AI Architecture & Machine Learning
   logo: EUIPO_logo_in_English.svg
 
+- name: Altia
+  short: Altia
+  area: AI Architecture & Machine Learning
+  logo: altia_identifier_main.svg
+
 - name: Siemens Energy
   short: Siemens Energy
   area: Data Science & Machine Learning
@@ -11,7 +16,7 @@
 - name: Sandoz
   short: Sandoz
   area: AI Architecture & MLOps
-  logo: Logo-Sandoz.png
+  logo: Sandoz-Blue.svg
 
 - name: BNP Paribas
   short: BNP Paribas
@@ -41,7 +46,7 @@
 - name: GKN Aerospace
   short: GKN Aerospace
   area: Industrial Analytics & Aerospace Manufacturing
-  logo: GKN.jpg
+  logo: GKN.svg
 
 - name: SkyWest Airlines
   short: SkyWest Airlines
