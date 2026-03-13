@@ -6,7 +6,7 @@ baseurl: ""
 author:
   name: Greendata Solutions
 
-theme: cvless
+remote_theme: piazzai/cvless
 
 collections:
   people:
@@ -22,3 +22,4 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
