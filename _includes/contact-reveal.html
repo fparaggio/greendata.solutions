@@ -1,0 +1,41 @@
+<div class="contact-reveal-section">
+  <button class="contact-reveal-btn" id="gd-reveal-btn" onclick="gdRevealContact()" aria-label="Show contact information">
+    <span>&#9993;&nbsp; Contatti / Contact</span>
+  </button>
+  <div class="contact-info" id="gd-contact" aria-live="polite"></div>
+</div>
+
+<script>
+/* Contact info is never in the DOM — only decoded on explicit user click */
+(function () {
+  var _p1 = 'ZnJhbmNlc2Nv';
+  var _p2 = 'QGdyZWVuZGF0YS5zb2x1dGlvbnM=';
+  var _ph = 'KzM5IDM1MTY5MzA0OTU=';
+
+  window.gdRevealContact = function () {
+    var btn = document.getElementById('gd-reveal-btn');
+    var box = document.getElementById('gd-contact');
+    if (!btn || !box) return;
+
+    var em = atob(_p1) + atob(_p2);
+    var ph = atob(_ph);
+    var phTel = ph.replace(/\s/g, '');
+
+    var emailLink = document.createElement('a');
+    emailLink.className = 'contact-link';
+    emailLink.href = 'mailto:' + em;
+    emailLink.textContent = em;
+
+    var phoneLink = document.createElement('a');
+    phoneLink.className = 'contact-link';
+    phoneLink.href = 'tel:' + phTel;
+    phoneLink.textContent = ph;
+
+    box.appendChild(emailLink);
+    box.appendChild(phoneLink);
+
+    box.style.display = 'flex';
+    btn.style.display = 'none';
+  };
+})();
+</script>

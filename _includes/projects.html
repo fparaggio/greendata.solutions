@@ -1,0 +1,25 @@
+<section class="featured-projects">
+  {% for project in site.data.projects %}
+  <div class="project-card">
+    <div class="project-partner">
+      {% if project.partner_logo %}
+      <img class="project-partner-logo" src="{{ '/assets/img/clients/' | append: project.partner_logo | prepend: site.url }}" alt="{{ project.partner }}" />
+      {% endif %}
+      {% if project.partner %}
+      <span class="project-partner-name">{{ project.partner }}</span>
+      {% endif %}
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">{{ project.name }}</h3>
+      <p class="project-description">{{ project.description }}</p>
+      {% if project.highlights %}
+      <ul class="project-highlights">
+        {% for highlight in project.highlights %}
+        <li>{{ highlight }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</section>
