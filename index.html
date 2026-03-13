@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -11,15 +11,68 @@
     
   </title>
 
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/open-color.min.css">
-  <link rel="stylesheet" href="/assets/css/syntax.css">
-  <link rel="stylesheet" href="/assets/css/styles.min.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
+            },
+            surface: {
+              50:  '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              700: '#1a1f2e',
+              800: '#111827',
+              850: '#0d1117',
+              900: '#0a0e14',
+              950: '#060a10',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          },
+          animation: {
+            'scroll-left': 'scroll-left 40s linear infinite',
+            'fade-in-up': 'fade-in-up 0.6s ease-out both',
+          },
+          keyframes: {
+            'scroll-left': {
+              '0%':   { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            'fade-in-up': {
+              '0%':   { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Inter + JetBrains Mono fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-  <link rel="manifest" href="/assets/site.webmanifest">
-  <link rel="alternate" type="application/atom+xml" title="greendata.solutions" href="/atom.xml">
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v3.10.0" />
@@ -36,227 +89,607 @@
 {"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Greendata Solutions"},"description":"AI, Data Science &amp; IoT Engineering for Industry","headline":"Home","name":"greendata.solutions","url":"/"}</script>
 <!-- End Jekyll SEO tag -->
 
+
+  <style>
+    /* Particles overlay */
+    #particles-js {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100vh;
+      z-index: 0;
+    }
+    #particles-js canvas { display: block; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0e14; }
+    ::-webkit-scrollbar-thumb { background: #1a1f2e; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #10b981; }
+
+    /* Logo marquee */
+    .logo-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 40s linear infinite;
+    }
+    .logo-marquee-track:hover { animation-play-state: paused; }
+    .logo-marquee-mask {
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Chat bubble typing animation */
+    .typing-dot {
+      animation: typing 1.4s infinite ease-in-out;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typing {
+      0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+      30% { opacity: 1; transform: translateY(-4px); }
+    }
+
+    /* Fade in on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 
+<body class="bg-surface-950 text-surface-200 font-sans antialiased">
 
-<body>
+  <!-- ╔══════════════════════════════════════════════════╗
+     ║  HERO — Particles Background                     ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Particles canvas -->
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
 
-  <div id="particles-js" class="fullscreen">
-  <div class="jumbotron text-center">
-    
-    <h1 class="particles-title">greendata.solutions</h1>
-    <h1 class="particles-subtitle">AI · Data Science · IoT Engineering</h1>
-    <div class="nowrap">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a class="particles-icon" href="https://www.linkedin.com/in/fparaggio/" target="_blank" rel="noopener noreferrer" aria-label="View LinkedIn profile"><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#000000"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="m 10.743752,9.2133219 c 0,0 -4.5125702,-1.1966648 -4.5125705,2.7561791 -3e-7,4.258147 4.5640215,2.715661 4.5640215,2.715661" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="m 12.449181,9.1023598 c 0,0 2.137936,5.8060432 2.686032,5.8060432 0.511982,0 2.633605,-5.7961624 2.633605,-5.7961624" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-</a>
-    </div>
+  <!-- Hero content -->
+  <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+    <h1 class="font-mono text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight"
+        style="text-shadow: 0 0 30px rgba(16,185,129,0.4);">
+      greendata.solutions
+    </h1>
+    <p class="font-mono text-brand-400 text-lg sm:text-xl md:text-2xl font-light tracking-wide mb-8"
+       style="text-shadow: 0 0 15px rgba(16,185,129,0.25);">
+      AI · Data Science · IoT Engineering
+    </p>
+    <p class="text-surface-200/70 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+      We engineer AI, Data Science and IoT systems for complex, real-world environments.
+    </p>
+    <a href="#chat" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 hover:bg-brand-500/20 hover:border-brand-400/50 transition-all duration-300 text-sm font-medium">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      Discover what we do
+    </a>
   </div>
-  <div class="particles-scroll">
-    <a class="particles-icon" href="#scroll"><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M6 9l6 6 6-6" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-</a>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+    <a href="#chat" class="block animate-bounce text-brand-400/50 hover:text-brand-400 transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </a>
   </div>
-</div>
-
-  
-
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col col-sm-10 col-md-8 col-lg-6">
-        <article id="home">
-  <div id="scroll" class="toggle-bar">
-  <a id="theme-toggle" class="toggle-icon" onclick="modeSwitcher()"></a>
-</div>
-
-  <main>
-    <h1 id="greendatasolutions">Greendata.solutions</h1>
-
-<p><strong>We engineer AI, Data Science and IoT systems for complex, real-world environments.</strong></p>
-
-<p>From predictive maintenance in aerospace and energy, to machine learning in pharma and agriculture — we design, build and deploy production-grade solutions that deliver measurable impact.</p>
-
-<hr />
-
-<h2 id="featured-projects">Featured Projects</h2>
-
-<section class="featured-projects">
-  
-  <div class="project-card">
-    <div class="project-partner">
-      
-      <img class="project-partner-logo" src="/assets/img/clients/vestas.svg" alt="Vestas" />
-      
-      
-      <span class="project-partner-name">Vestas</span>
-      
-    </div>
-    <div class="project-content">
-      <h3 class="project-title">Advanced Laser Intelligence for Dynamic Assets</h3>
-      <p class="project-description">Rotor diagnostics and SCADA processing platform for wind turbine operators, delivering actionable insights through non-destructive monitoring and predictive maintenance.
-</p>
-      
-      <ul class="project-highlights">
-        
-        <li>Reduced unplanned downtime by 30% through predictive analytics</li>
-        
-        <li>Processed multi-terabyte SCADA datasets for fleet-wide optimization</li>
-        
-        <li>AI-based anomaly detection on vibration and performance data</li>
-        
-      </ul>
-      
-    </div>
-  </div>
-  
-  <div class="project-card">
-    <div class="project-partner">
-      
-      <img class="project-partner-logo" src="/assets/img/clients/foxess.svg" alt="FoxESS" />
-      
-      
-      <span class="project-partner-name">FoxESS</span>
-      
-    </div>
-    <div class="project-content">
-      <h3 class="project-title">EV Charging Platform</h3>
-      <p class="project-description">OCPP-compliant electric vehicle charging infrastructure with custom embedded logic, payment UX, and real-time fleet management dashboards.
-</p>
-      
-      <ul class="project-highlights">
-        
-        <li>End-to-end design from embedded firmware to cloud platform</li>
-        
-        <li>Integrated payment processing and user authentication</li>
-        
-        <li>Real-time monitoring and remote diagnostics for operators</li>
-        
-      </ul>
-      
-    </div>
-  </div>
-  
-  <div class="project-card">
-    <div class="project-partner">
-      
-      <img class="project-partner-logo" src="/assets/img/clients/altamura-op.svg" alt="Altamura OP" />
-      
-      
-      <span class="project-partner-name">Altamura OP</span>
-      
-    </div>
-    <div class="project-content">
-      <h3 class="project-title">Superagro.pro</h3>
-      <p class="project-description">Real-time telemetry and AI-driven irrigation for greenhouse agriculture, combining IoT sensor networks with predictive models for pest detection and resource optimization.
-</p>
-      
-      <ul class="project-highlights">
-        
-        <li>Saved €17,000/ha/year through automated irrigation control</li>
-        
-        <li>Deployed edge AI for early pest and disease prediction</li>
-        
-        <li>Integrated with existing SCADA and farm management systems</li>
-        
-      </ul>
-      
-    </div>
-  </div>
-  
 </section>
 
-<hr />
 
-<h2 id="trusted-by">Trusted By</h2>
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  CHAT — Conversational Explainer (fin.ai style)  ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section id="chat" class="relative z-10 py-24 sm:py-32">
+  <div class="max-w-3xl mx-auto px-6">
 
-<div class="clients-grid">
+    <!-- Section badge -->
+    <div class="flex items-center gap-2 mb-12 reveal">
+      <span class="inline-block w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+      <span class="text-xs font-mono text-brand-400 uppercase tracking-widest">How we work</span>
+    </div>
+
+    <!-- Chat conversation -->
+    <div class="space-y-6">
+
+      <!-- User message 1 -->
+      <div class="flex justify-end reveal">
+        <div class="max-w-md bg-brand-500/10 border border-brand-500/20 rounded-2xl rounded-br-md px-5 py-3.5">
+          <p class="text-sm text-surface-100">What does greendata.solutions actually do?</p>
+        </div>
+      </div>
+
+      <!-- Bot message 1 -->
+      <div class="flex justify-start reveal">
+        <div class="flex gap-3 max-w-lg">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center">
+            <span class="text-brand-400 text-xs font-bold font-mono">gd</span>
+          </div>
+          <div class="bg-surface-800 border border-surface-700/50 rounded-2xl rounded-bl-md px-5 py-3.5">
+            <p class="text-sm text-surface-200 leading-relaxed">We design, build, and deploy <strong class="text-white">production-grade AI and data systems</strong> for industries like aerospace, energy, pharma, and agriculture. Think predictive maintenance, machine learning pipelines, and IoT platforms.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- User message 2 -->
+      <div class="flex justify-end reveal">
+        <div class="max-w-md bg-brand-500/10 border border-brand-500/20 rounded-2xl rounded-br-md px-5 py-3.5">
+          <p class="text-sm text-surface-100">Who have you worked with?</p>
+        </div>
+      </div>
+
+      <!-- Bot message 2 -->
+      <div class="flex justify-start reveal">
+        <div class="flex gap-3 max-w-lg">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center">
+            <span class="text-brand-400 text-xs font-bold font-mono">gd</span>
+          </div>
+          <div class="bg-surface-800 border border-surface-700/50 rounded-2xl rounded-bl-md px-5 py-3.5">
+            <p class="text-sm text-surface-200 leading-relaxed">We've delivered solutions for <strong class="text-white">Rolls-Royce, Boeing, Siemens Energy, Vestas, Leonardo, BNP Paribas</strong>, and more — across 6 countries and multiple sectors. Scroll down to see our featured projects and the full client list.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- User message 3 -->
+      <div class="flex justify-end reveal">
+        <div class="max-w-md bg-brand-500/10 border border-brand-500/20 rounded-2xl rounded-br-md px-5 py-3.5">
+          <p class="text-sm text-surface-100">Can you give me a real example?</p>
+        </div>
+      </div>
+
+      <!-- Bot message 3 -->
+      <div class="flex justify-start reveal">
+        <div class="flex gap-3 max-w-lg">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center">
+            <span class="text-brand-400 text-xs font-bold font-mono">gd</span>
+          </div>
+          <div class="bg-surface-800 border border-surface-700/50 rounded-2xl rounded-bl-md px-5 py-3.5">
+            <p class="text-sm text-surface-200 leading-relaxed">For <strong class="text-white">Vestas</strong>, we built an AI-based rotor diagnostics platform processing multi-terabyte SCADA datasets — <strong class="text-white">cutting unplanned downtime by 30%</strong>. Every project is end-to-end: from data engineering to deployed, monitored production systems.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typing indicator -->
+      <div class="flex justify-start reveal">
+        <div class="flex gap-3">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center">
+            <span class="text-brand-400 text-xs font-bold font-mono">gd</span>
+          </div>
+          <div class="bg-surface-800 border border-surface-700/50 rounded-2xl rounded-bl-md px-5 py-3.5 flex items-center gap-1.5">
+            <span class="typing-dot inline-block w-1.5 h-1.5 rounded-full bg-brand-400/60"></span>
+            <span class="typing-dot inline-block w-1.5 h-1.5 rounded-full bg-brand-400/60"></span>
+            <span class="typing-dot inline-block w-1.5 h-1.5 rounded-full bg-brand-400/60"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  PROJECTS — Featured Work                        ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section id="projects" class="relative z-10 py-24 sm:py-32">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <!-- Section header -->
+    <div class="text-center mb-16 reveal">
+      <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-3">Portfolio</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Featured Projects</h2>
+    </div>
+
+    <!-- Projects grid — Tailwind CSS -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/euipo.svg" alt="European Union Intellectual Property Office" />
-    <span class="client-area">AI Architecture &amp; Machine Learning</span>
+  <div class="reveal group bg-surface-850 border border-surface-700/40 rounded-2xl p-6 hover:border-brand-500/30 transition-all duration-300">
+
+    <!-- Partner badge with small logo -->
+    <div class="flex items-center gap-2.5 mb-5">
+      
+      <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/90 flex items-center justify-center p-1">
+        <img src="/assets/img/Vestas.svg" alt="Vestas" class="w-full h-full object-contain" />
+      </div>
+      
+      
+      <span class="text-xs font-mono text-surface-200/60 uppercase tracking-wider">Vestas</span>
+      
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-lg font-semibold text-white mb-3 group-hover:text-brand-400 transition-colors duration-300">Advanced Laser Intelligence for Dynamic Assets</h3>
+
+    <!-- Description -->
+    <p class="text-sm text-surface-200/60 leading-relaxed mb-4">Rotor diagnostics and SCADA processing platform for wind turbine operators, delivering actionable insights through non-destructive monitoring and predictive maintenance.
+</p>
+
+    <!-- Highlights -->
+    
+    <ul class="space-y-1.5">
+      
+      <li class="flex items-start gap-2 text-xs text-surface-200/50">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">›</span>
+        <span>Reduced unplanned downtime by 30% through predictive analytics</span>
+      </li>
+      
+      <li class="flex items-start gap-2 text-xs text-surface-200/50">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">›</span>
+        <span>Processed multi-terabyte SCADA datasets for fleet-wide optimization</span>
+      </li>
+      
+      <li class="flex items-start gap-2 text-xs text-surface-200/50">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">›</span>
+        <span>AI-based anomaly detection on vibration and performance data</span>
+      </li>
+      
+    </ul>
+    
+
   </div>
   
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/siemens-energy.svg" alt="Siemens Energy" />
-    <span class="client-area">Data Science &amp; Machine Learning</span>
+  <div class="reveal group bg-surface-850 border border-surface-700/40 rounded-2xl p-6 hover:border-brand-500/30 transition-all duration-300">
+
+    <!-- Partner badge with small logo -->
+    <div class="flex items-center gap-2.5 mb-5">
+      
+      <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/90 flex items-center justify-center p-1">
+        <img src="/assets/img/clients/foxess.svg" alt="FoxESS" class="w-full h-full object-contain" />
+      </div>
+      
+      
+      <span class="text-xs font-mono text-surface-200/60 uppercase tracking-wider">FoxESS</span>
+      
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-lg font-semibold text-white mb-3 group-hover:text-brand-400 transition-colors duration-300">EV Charging Platform</h3>
+
+    <!-- Description -->
+    <p class="text-sm text-surface-200/60 leading-relaxed mb-4">OCPP-compliant electric vehicle charging infrastructure with custom embedded logic, payment UX, and real-time fleet management dashboards.
+</p>
+
+    <!-- Highlights -->
+    
+    <ul class="space-y-1.5">
+      
+      <li class="flex items-start gap-2 text-xs text-surface-200/50">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">›</span>
+        <span>End-to-end design from embedded firmware to cloud platform</span>
+      </li>
+      
+      <li class="flex items-start gap-2 text-xs text-surface-200/50">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">›</span>
+        <span>Integrated payment processing and user authentication</span>
+      </li>
+      
+      <li class="flex items-start gap-2 text-xs text-surface-200/50">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">›</span>
+        <span>Real-time monitoring and remote diagnostics for operators</span>
+      </li>
+      
+    </ul>
+    
+
   </div>
   
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/sandoz.svg" alt="Sandoz" />
-    <span class="client-area">AI Architecture &amp; MLOps</span>
-  </div>
-  
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/bnp-paribas.svg" alt="BNP Paribas" />
-    <span class="client-area">Professional Training in Data Science</span>
-  </div>
-  
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/leonardo.svg" alt="Leonardo" />
-    <span class="client-area">Business Innovation Factory Winner</span>
-  </div>
-  
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/boeing.svg" alt="Boeing" />
-    <span class="client-area">Aerospace Engineering &amp; Data Analytics</span>
-  </div>
-  
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/rolls-royce.svg" alt="Rolls-Royce" />
-    <span class="client-area">Advanced Engine Analytics &amp; Predictive Maintenance</span>
-  </div>
-  
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/porterbrook.svg" alt="Porterbrook" />
-    <span class="client-area">Rolling Assets (Railway) Predictive Maintenance</span>
-  </div>
-  
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/gkn-aerospace.svg" alt="GKN Aerospace" />
-    <span class="client-area">Industrial Analytics &amp; Aerospace Manufacturing</span>
-  </div>
-  
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/skywest-airlines.svg" alt="SkyWest Airlines" />
-    <span class="client-area">Aviation Operations Analytics &amp; Optimization</span>
-  </div>
-  
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/erg.svg" alt="Erg S.p.A." />
-    <span class="client-area">Predictive Maintenance &amp; Technical Assets Optimization</span>
-  </div>
-  
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/vestas.svg" alt="Vestas" />
-    <span class="client-area">Non-Destructive AI-Based Monitoring</span>
-  </div>
-  
-  <div class="client-card">
-    <img class="client-logo" src="/assets/img/clients/altamura-op.svg" alt="Altamura OP" />
-    <span class="client-area">Agriculture Monitoring &amp; Pest Prediction</span>
+  <div class="reveal group bg-surface-850 border border-surface-700/40 rounded-2xl p-6 hover:border-brand-500/30 transition-all duration-300">
+
+    <!-- Partner badge with small logo -->
+    <div class="flex items-center gap-2.5 mb-5">
+      
+      <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/90 flex items-center justify-center p-1">
+        <img src="/assets/img/altamura-footer.png" alt="Altamura OP" class="w-full h-full object-contain" />
+      </div>
+      
+      
+      <span class="text-xs font-mono text-surface-200/60 uppercase tracking-wider">Altamura OP</span>
+      
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-lg font-semibold text-white mb-3 group-hover:text-brand-400 transition-colors duration-300">Superagro.pro</h3>
+
+    <!-- Description -->
+    <p class="text-sm text-surface-200/60 leading-relaxed mb-4">Real-time telemetry and AI-driven irrigation for greenhouse agriculture, combining IoT sensor networks with predictive models for pest detection and resource optimization.
+</p>
+
+    <!-- Highlights -->
+    
+    <ul class="space-y-1.5">
+      
+      <li class="flex items-start gap-2 text-xs text-surface-200/50">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">›</span>
+        <span>Saved €17,000/ha/year through automated irrigation control</span>
+      </li>
+      
+      <li class="flex items-start gap-2 text-xs text-surface-200/50">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">›</span>
+        <span>Deployed edge AI for early pest and disease prediction</span>
+      </li>
+      
+      <li class="flex items-start gap-2 text-xs text-surface-200/50">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">›</span>
+        <span>Integrated with existing SCADA and farm management systems</span>
+      </li>
+      
+    </ul>
+    
+
   </div>
   
 </div>
 
-<hr />
 
-<div class="contact-reveal-section">
-  <button class="contact-reveal-btn" id="gd-reveal-btn" onclick="gdRevealContact()" aria-label="Show contact information">
-    <span>&#9993;&nbsp; Contatti / Contact</span>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  CLIENTS — Trusted By                            ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section id="clients" class="relative z-10 py-24 sm:py-32">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Section header -->
+    <div class="text-center mb-16 reveal">
+      <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-3">Clients</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Trusted By</h2>
+      <p class="text-surface-200/60 mt-4 max-w-xl mx-auto text-base">
+        Delivering impact for leading organizations across aerospace, energy, pharma, and more.
+      </p>
+    </div>
+
+    <!-- Clients logo marquee — Tailwind CSS (fin.ai inspired) -->
+<div class="reveal">
+
+  <!-- Scrolling logo strip -->
+  <div class="relative overflow-hidden py-6 logo-marquee-mask">
+    <div class="logo-marquee-track">
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/EUIPO_logo_in_English.svg" alt="European Union Intellectual Property Office" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Siemens_Energy_logo.svg.png" alt="Siemens Energy" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Logo-Sandoz.png" alt="Sandoz" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/bnp_paribas.png" alt="BNP Paribas" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Logo_Leonardo.svg" alt="Leonardo" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Boeing_full_logo.svg" alt="Boeing" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Rolls_royce_holdings_logo.svg" alt="Rolls-Royce" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Porterbrook_logo.svg" alt="Porterbrook" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/GKN.jpg" alt="GKN Aerospace" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/SkyWest_Airlines_(United_States)_logo.svg" alt="SkyWest Airlines" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/ERG_logo.svg" alt="Erg S.p.A." class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Vestas.svg" alt="Vestas" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/altamura-footer.png" alt="Altamura OP" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <!-- Duplicate for seamless loop -->
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/EUIPO_logo_in_English.svg" alt="European Union Intellectual Property Office" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Siemens_Energy_logo.svg.png" alt="Siemens Energy" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Logo-Sandoz.png" alt="Sandoz" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/bnp_paribas.png" alt="BNP Paribas" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Logo_Leonardo.svg" alt="Leonardo" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Boeing_full_logo.svg" alt="Boeing" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Rolls_royce_holdings_logo.svg" alt="Rolls-Royce" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Porterbrook_logo.svg" alt="Porterbrook" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/GKN.jpg" alt="GKN Aerospace" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/SkyWest_Airlines_(United_States)_logo.svg" alt="SkyWest Airlines" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/ERG_logo.svg" alt="Erg S.p.A." class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/Vestas.svg" alt="Vestas" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+      <div class="flex-shrink-0 flex items-center justify-center mx-8 sm:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" style="min-width:100px;">
+        <img src="/assets/img/altamura-footer.png" alt="Altamura OP" class="h-8 sm:h-10 w-auto max-w-[120px] object-contain" />
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Client grid with details (below the marquee) -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/EUIPO_logo_in_English.svg" alt="European Union Intellectual Property Office" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">AI Architecture & Machine Learning</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/Siemens_Energy_logo.svg.png" alt="Siemens Energy" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Data Science & Machine Learning</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/Logo-Sandoz.png" alt="Sandoz" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">AI Architecture & MLOps</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/bnp_paribas.png" alt="BNP Paribas" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Professional Training in Data Science</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/Logo_Leonardo.svg" alt="Leonardo" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Business Innovation Factory Winner</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/Boeing_full_logo.svg" alt="Boeing" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Aerospace Engineering & Data Analytics</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/Rolls_royce_holdings_logo.svg" alt="Rolls-Royce" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Advanced Engine Analytics & Predictive Maintenance</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/Porterbrook_logo.svg" alt="Porterbrook" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Rolling Assets (Railway) Predictive Maintenance</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/GKN.jpg" alt="GKN Aerospace" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Industrial Analytics & Aerospace Manufacturing</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/SkyWest_Airlines_(United_States)_logo.svg" alt="SkyWest Airlines" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Aviation Operations Analytics & Optimization</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/ERG_logo.svg" alt="Erg S.p.A." class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Predictive Maintenance & Technical Assets Optimization</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/Vestas.svg" alt="Vestas" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Non-Destructive AI-Based Monitoring</p>
+    </div>
+    
+    <div class="group bg-surface-850 border border-surface-700/30 rounded-xl p-4 text-center hover:border-brand-500/30 transition-all duration-300">
+      <div class="flex items-center justify-center h-10 mb-3">
+        <img src="/assets/img/altamura-footer.png" alt="Altamura OP" class="h-7 w-auto max-w-[90px] object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <p class="text-[11px] text-surface-200/40 leading-tight font-mono">Agriculture Monitoring & Pest Prediction</p>
+    </div>
+    
+  </div>
+
+</div>
+
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  CONTACT                                         ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section id="contact" class="relative z-10 py-24 sm:py-32">
+  <div class="max-w-2xl mx-auto px-6 text-center">
+
+    <div class="reveal">
+      <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-3">Get in Touch</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Let's build something together</h2>
+      <p class="text-surface-200/60 mb-10">
+        Have a complex data challenge? We'd love to hear about it.
+      </p>
+    </div>
+
+    <!-- Contact reveal — Tailwind CSS -->
+<div class="reveal">
+  <button id="gd-reveal-btn" onclick="gdRevealContact()" aria-label="Show contact information"
+    class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-brand-500 text-white font-medium text-sm hover:bg-brand-600 transition-all duration-300 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+    Get in touch
   </button>
-  <div class="contact-info" id="gd-contact" aria-live="polite"></div>
+  <div id="gd-contact" class="hidden flex-col items-center gap-3 mt-8" aria-live="polite"></div>
 </div>
 
 <script>
-/* Contact info is never in the DOM — only decoded on explicit user click */
 (function () {
   var _p1 = 'ZnJhbmNlc2Nv';
   var _p2 = 'QGdyZWVuZGF0YS5zb2x1dGlvbnM=';
@@ -272,12 +705,12 @@
     var phTel = ph.replace(/\s/g, '');
 
     var emailLink = document.createElement('a');
-    emailLink.className = 'contact-link';
+    emailLink.className = 'inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-mono text-sm transition-colors';
     emailLink.href = 'mailto:' + em;
     emailLink.textContent = em;
 
     var phoneLink = document.createElement('a');
-    phoneLink.className = 'contact-link';
+    phoneLink.className = 'inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-mono text-sm transition-colors';
     phoneLink.href = 'tel:' + phTel;
     phoneLink.textContent = ph;
 
@@ -291,25 +724,45 @@
 </script>
 
 
-  </main>
-  <footer>
-  <small>&copy; <time datetime="2026-03-13T14:40:18+00:00">2026</time>
-    greendata.solutions. All rights reserved.</small>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  FOOTER                                          ║
+     ╚══════════════════════════════════════════════════╝ -->
+<!-- Footer — Tailwind CSS -->
+<footer class="relative z-10 border-t border-surface-700/30 py-8">
+  <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-xs text-surface-200/40 font-mono">
+      &copy; <time datetime="2026-03-13T15:04:34+00:00">2026</time>
+      greendata.solutions
+    </p>
+    <p class="text-xs text-surface-200/30">All rights reserved.</p>
+  </div>
 </footer>
 
-</article>
 
-      </div>
-    </div>
-  </div>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  
-  <script src="/assets/js/darkmode.js"></script>
-  
-  
-  <script src="assets/js/particles.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  
+
+
+  <!-- Particles JS -->
+  <script src="/assets/js/particles.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+
+  <!-- Scroll reveal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var reveals = document.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(function (el) { observer.observe(el); });
+    });
+  </script>
 </body>
 
 </html>
