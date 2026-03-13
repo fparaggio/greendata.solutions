@@ -1,0 +1,64 @@
+- name: European Union Intellectual Property Office
+  short: EUIPO
+  area: AI Architecture & Machine Learning
+  logo: euipo.svg
+
+- name: Siemens Energy
+  short: Siemens Energy
+  area: Data Science & Machine Learning
+  logo: siemens-energy.svg
+
+- name: Sandoz
+  short: Sandoz
+  area: AI Architecture & MLOps
+  logo: sandoz.svg
+
+- name: BNP Paribas
+  short: BNP Paribas
+  area: Professional Training in Data Science
+  logo: bnp-paribas.svg
+
+- name: Leonardo
+  short: Leonardo
+  area: Business Innovation Factory Winner
+  logo: leonardo.svg
+
+- name: Boeing
+  short: Boeing
+  area: Aerospace Engineering & Data Analytics
+  logo: boeing.svg
+
+- name: Rolls-Royce
+  short: Rolls-Royce
+  area: Advanced Engine Analytics & Predictive Maintenance
+  logo: rolls-royce.svg
+
+- name: Porterbrook
+  short: Porterbrook
+  area: Rolling Assets (Railway) Predictive Maintenance
+  logo: porterbrook.svg
+
+- name: GKN Aerospace
+  short: GKN Aerospace
+  area: Industrial Analytics & Aerospace Manufacturing
+  logo: gkn-aerospace.svg
+
+- name: SkyWest Airlines
+  short: SkyWest Airlines
+  area: Aviation Operations Analytics & Optimization
+  logo: skywest-airlines.svg
+
+- name: Erg S.p.A.
+  short: Erg S.p.A.
+  area: Predictive Maintenance & Technical Assets Optimization
+  logo: erg.svg
+
+- name: Vestas
+  short: Vestas
+  area: Non-Destructive AI-Based Monitoring
+  logo: vestas.svg
+
+- name: Altamura OP
+  short: Altamura OP
+  area: Agriculture Monitoring & Pest Prediction
+  logo: altamura-op.svg

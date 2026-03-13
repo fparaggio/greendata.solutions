@@ -1,11 +1,31 @@
 - name: Smart Greenhouses
   image: greenhouse.jpg
-  description: Real-time telemetry and AI-driven irrigation for greenhouse agriculture. Saved €17,000/ha/year.
+  description: >
+    Real-time telemetry and AI-driven irrigation for greenhouse agriculture,
+    combining IoT sensor networks with predictive models for pest detection
+    and resource optimization.
+  highlights:
+    - "Saved €17,000/ha/year through automated irrigation control"
+    - "Deployed edge AI for early pest and disease prediction"
+    - "Integrated with existing SCADA and farm management systems"
 
 - name: Windstack Analytics
   image: windturbine.jpg
-  description: Rotor diagnostics and SCADA processing tools for wind turbine operators.
+  description: >
+    Rotor diagnostics and SCADA processing platform for wind turbine operators,
+    delivering actionable insights through non-destructive monitoring and
+    predictive maintenance.
+  highlights:
+    - "Reduced unplanned downtime by 30% through predictive analytics"
+    - "Processed multi-terabyte SCADA datasets for fleet-wide optimization"
+    - "AI-based anomaly detection on vibration and performance data"
 
 - name: EV Charging Platform
   image: evcharge.jpg
-  description: OCPP-compliant infrastructure with custom embedded logic and payment UX.
+  description: >
+    OCPP-compliant electric vehicle charging infrastructure with custom embedded
+    logic, payment UX, and real-time fleet management dashboards.
+  highlights:
+    - "End-to-end design from embedded firmware to cloud platform"
+    - "Integrated payment processing and user authentication"
+    - "Real-time monitoring and remote diagnostics for operators"
