@@ -28,10 +28,10 @@
   partner: Altamura OP
   partner_logo: altamura-footer.png
   description: >
-    Real-time telemetry and AI-driven irrigation for greenhouse agriculture,
+    Real-time telemetry and AI-driven dss for greenhouse agriculture,
     combining IoT sensor networks with predictive models for pest detection
     and resource optimization.
   highlights:
-    - "Saved €17,000/ha/year through automated irrigation control"
+    - "Saved €17,000/ha/year through automated control"
     - "Deployed edge AI for early pest and disease prediction"
-    - "Integrated with existing SCADA and farm management systems"
+    - "Integrated with existing farm management systems"
