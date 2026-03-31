@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+    greendata.solutions &middot; Industrial AI Diagnostic — 3 Weeks
+    
+  </title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
+            },
+            surface: {
+              50:  '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              700: '#1a1f2e',
+              800: '#111827',
+              850: '#0d1117',
+              900: '#0a0e14',
+              950: '#060a10',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          },
+          animation: {
+            'scroll-left': 'scroll-left 40s linear infinite',
+            'fade-in-up': 'fade-in-up 0.6s ease-out both',
+          },
+          keyframes: {
+            'scroll-left': {
+              '0%':   { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            'fade-in-up': {
+              '0%':   { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Inter + JetBrains Mono fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Industrial AI Diagnostic — 3 Weeks" />
+<meta name="author" content="Greendata Solutions" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Identify where AI works, where it doesn’t — and why. A focused 3-week diagnostic for complex industrial operations." />
+<meta property="og:description" content="Identify where AI works, where it doesn’t — and why. A focused 3-week diagnostic for complex industrial operations." />
+<meta property="og:site_name" content="greendata.solutions" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Industrial AI Diagnostic — 3 Weeks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Greendata Solutions"},"description":"Identify where AI works, where it doesn’t — and why. A focused 3-week diagnostic for complex industrial operations.","headline":"Industrial AI Diagnostic — 3 Weeks","url":"/industrial-ai-diagnostic.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <style>
+    /* Particles overlay */
+    #particles-js {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100vh;
+      z-index: 0;
+    }
+    #particles-js canvas { display: block; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0e14; }
+    ::-webkit-scrollbar-thumb { background: #1a1f2e; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #10b981; }
+
+    /* Logo marquee */
+    .logo-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 40s linear infinite;
+    }
+    .logo-marquee-track:hover { animation-play-state: paused; }
+    .logo-marquee-mask {
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Chat bubble typing animation */
+    .typing-dot {
+      animation: typing 1.4s infinite ease-in-out;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typing {
+      0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+      30% { opacity: 1; transform: translateY(-4px); }
+    }
+
+    /* Fade in on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-surface-950 text-surface-200 font-sans antialiased">
+
+  <!-- ╔══════════════════════════════════════════════════╗
+     ║  HERO                                            ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden border-b border-surface-700/30">
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+  <div class="relative z-10 text-center px-6 max-w-3xl mx-auto py-24">
+    <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-4">Industrial AI Diagnostic</span>
+    <h1 class="font-mono text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight"
+        style="text-shadow: 0 0 30px rgba(16,185,129,0.4);">
+      Industrial AI Diagnostic — 3 Weeks
+    </h1>
+    <p class="text-brand-400 text-lg sm:text-xl font-light mb-6">
+      Identify where AI works, where it doesn't — and why.
+    </p>
+    <p class="text-surface-200/70 text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-10">
+      We don't start from data.<br>
+      We start from how your system actually works.<br><br>
+      This diagnostic is designed to uncover where AI can drive real decisions —
+      and where it will fail without proper understanding of the domain.
+    </p>
+    <a href="#contact-diagnostic"
+       class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-500 text-white font-medium text-sm hover:bg-brand-600 transition-all duration-300 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40">
+      Request Diagnostic
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  SECTION 1 — THE PROBLEM                        ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section class="relative z-10 py-24 sm:py-32 border-b border-surface-700/30">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="reveal">
+      <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-4">The Problem</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8">Why most AI projects fail</h2>
+    </div>
+
+    <div class="reveal space-y-4 text-surface-200/80 leading-relaxed text-base sm:text-lg">
+      <p>
+        Most AI initiatives start from available data.<br>
+        But data is only a projection of reality.
+      </p>
+      <p>
+        Without understanding the system — its states, transitions, and failure modes —
+        models optimize noise instead of decisions.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  SECTION 2 — THE APPROACH                       ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section class="relative z-10 py-24 sm:py-32 border-b border-surface-700/30">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="reveal">
+      <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-4">The Approach</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Outcome → Domain → Feature</h2>
+      <p class="text-surface-200/70 text-base sm:text-lg mb-10">We reverse the typical AI process:</p>
+    </div>
+
+    <div class="reveal space-y-4">
+      <div class="flex items-start gap-4 bg-surface-800/60 border border-surface-700/50 rounded-xl px-6 py-5">
+        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 font-mono font-bold text-sm">1</span>
+        <div>
+          <p class="text-white font-medium">Start from decisions</p>
+          <p class="text-surface-200/60 text-sm mt-1">Define the outcomes that matter — before touching the data.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 bg-surface-800/60 border border-surface-700/50 rounded-xl px-6 py-5">
+        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 font-mono font-bold text-sm">2</span>
+        <div>
+          <p class="text-white font-medium">Understand the system</p>
+          <p class="text-surface-200/60 text-sm mt-1">Map the domain: states, transitions, failure modes, and constraints.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 bg-surface-800/60 border border-surface-700/50 rounded-xl px-6 py-5">
+        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 font-mono font-bold text-sm">3</span>
+        <div>
+          <p class="text-white font-medium">Extract the right signals</p>
+          <p class="text-surface-200/60 text-sm mt-1">Identify domain-driven features. Not the other way around.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  SECTION 3 — 3-WEEK TIMELINE                    ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section class="relative z-10 py-24 sm:py-32 border-b border-surface-700/30">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <div class="text-center mb-16 reveal">
+      <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-4">Timeline</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">What happens in 3 weeks</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-6">
+
+      <!-- Week 1 -->
+      <div class="reveal bg-surface-800/60 border border-surface-700/50 rounded-2xl px-6 py-7">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="w-9 h-9 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 font-mono font-bold text-sm flex-shrink-0">W1</span>
+          <h3 class="text-white font-semibold">System Reality</h3>
+        </div>
+        <ul class="space-y-2.5 text-sm text-surface-200/70">
+          <li class="flex items-start gap-2">
+            <span class="text-brand-400 mt-0.5 flex-shrink-0">→</span>
+            Map processes and decision points
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-400 mt-0.5 flex-shrink-0">→</span>
+            Identify failure modes
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-400 mt-0.5 flex-shrink-0">→</span>
+            Understand operational constraints
+          </li>
+        </ul>
+      </div>
+
+      <!-- Week 2 -->
+      <div class="reveal bg-surface-800/60 border border-surface-700/50 rounded-2xl px-6 py-7">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="w-9 h-9 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 font-mono font-bold text-sm flex-shrink-0">W2</span>
+          <h3 class="text-white font-semibold">Signals &amp; Features</h3>
+        </div>
+        <ul class="space-y-2.5 text-sm text-surface-200/70">
+          <li class="flex items-start gap-2">
+            <span class="text-brand-400 mt-0.5 flex-shrink-0">→</span>
+            Identify meaningful signals
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-400 mt-0.5 flex-shrink-0">→</span>
+            Remove irrelevant data
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-400 mt-0.5 flex-shrink-0">→</span>
+            Define domain-driven features
+          </li>
+        </ul>
+      </div>
+
+      <!-- Week 3 -->
+      <div class="reveal bg-surface-800/60 border border-surface-700/50 rounded-2xl px-6 py-7">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="w-9 h-9 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 font-mono font-bold text-sm flex-shrink-0">W3</span>
+          <h3 class="text-white font-semibold">Decisions &amp; ROI</h3>
+        </div>
+        <ul class="space-y-2.5 text-sm text-surface-200/70">
+          <li class="flex items-start gap-2">
+            <span class="text-brand-400 mt-0.5 flex-shrink-0">→</span>
+            Prioritize use cases
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-400 mt-0.5 flex-shrink-0">→</span>
+            Estimate business impact
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-400 mt-0.5 flex-shrink-0">→</span>
+            Define initial system architecture
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  SECTION 4 — WHAT YOU GET                       ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section class="relative z-10 py-24 sm:py-32 border-b border-surface-700/30">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="reveal">
+      <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-4">Deliverables</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-10">What you get</h2>
+    </div>
+
+    <div class="reveal grid sm:grid-cols-2 gap-4">
+      <div class="flex items-start gap-3 bg-surface-800/60 border border-surface-700/50 rounded-xl px-5 py-4">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </span>
+        <p class="text-surface-200 text-sm">AI Opportunity Map</p>
+      </div>
+      <div class="flex items-start gap-3 bg-surface-800/60 border border-surface-700/50 rounded-xl px-5 py-4">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </span>
+        <p class="text-surface-200 text-sm">Top 3 prioritized use cases</p>
+      </div>
+      <div class="flex items-start gap-3 bg-surface-800/60 border border-surface-700/50 rounded-xl px-5 py-4">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </span>
+        <p class="text-surface-200 text-sm">ROI estimation</p>
+      </div>
+      <div class="flex items-start gap-3 bg-surface-800/60 border border-surface-700/50 rounded-xl px-5 py-4">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </span>
+        <p class="text-surface-200 text-sm">Architecture sketch</p>
+      </div>
+      <div class="flex items-start gap-3 bg-surface-800/60 border border-surface-700/50 rounded-xl px-5 py-4 sm:col-span-2">
+        <span class="text-brand-400 mt-0.5 flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </span>
+        <p class="text-surface-200 text-sm">Go / No-Go decision support</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  SECTION 5 — ENGAGEMENT                         ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section class="relative z-10 py-24 sm:py-32 border-b border-surface-700/30">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="reveal">
+      <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-4">Engagement</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-10">How it works</h2>
+    </div>
+
+    <div class="reveal grid sm:grid-cols-3 gap-6 text-center">
+      <div class="bg-surface-800/60 border border-surface-700/50 rounded-2xl px-6 py-7">
+        <p class="text-xs font-mono text-brand-400 uppercase tracking-widest mb-3">Duration</p>
+        <p class="text-white font-semibold text-lg">3 weeks</p>
+      </div>
+      <div class="bg-surface-800/60 border border-surface-700/50 rounded-2xl px-6 py-7">
+        <p class="text-xs font-mono text-brand-400 uppercase tracking-widest mb-3">Format</p>
+        <p class="text-surface-200/80 text-sm leading-relaxed">Focused engagement with direct interaction with technical and operational stakeholders</p>
+      </div>
+      <div class="bg-surface-800/60 border border-surface-700/50 rounded-2xl px-6 py-7">
+        <p class="text-xs font-mono text-brand-400 uppercase tracking-widest mb-3">Price</p>
+        <p class="text-surface-200/80 text-sm leading-relaxed">Custom pricing<br><span class="text-surface-200/50">(typical range €15k–€25k)</span></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  SECTION 6 — SOFT BRIDGE                        ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section class="relative z-10 py-24 sm:py-32 border-b border-surface-700/30">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="reveal">
+      <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-4">Context</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8">When data is not enough</h2>
+    </div>
+
+    <div class="reveal space-y-4 text-surface-200/70 leading-relaxed text-base sm:text-lg">
+      <p>
+        In some systems, data alone is not sufficient to make reliable decisions.
+      </p>
+      <p>
+        For example, in wind energy, monitoring systems may detect anomalies
+        without providing physical confirmation.
+      </p>
+      <p>
+        In these cases, a validation layer becomes critical.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  FINAL CTA                                       ║
+     ╚══════════════════════════════════════════════════╝ -->
+<section id="contact-diagnostic" class="relative z-10 py-24 sm:py-32">
+  <div class="max-w-2xl mx-auto px-6 text-center">
+
+    <div class="reveal">
+      <span class="inline-block text-xs font-mono text-brand-400 uppercase tracking-widest mb-4">Get started</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Start with clarity</h2>
+      <p class="text-surface-200/60 text-base sm:text-lg mb-10">
+        Before building models, understand your system.
+      </p>
+    </div>
+
+    <div class="reveal">
+      <!-- Contact reveal — Tailwind CSS -->
+<div class="reveal">
+  <button id="gd-reveal-btn" onclick="gdRevealContact()" aria-label="Show contact information"
+    class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-brand-500 text-white font-medium text-sm hover:bg-brand-600 transition-all duration-300 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+    Get in touch
+  </button>
+  <div id="gd-contact" class="hidden flex-col items-center gap-3 mt-8" aria-live="polite"></div>
+</div>
+
+<script>
+(function () {
+  var _p1 = 'ZnJhbmNlc2Nv';
+  var _p2 = 'QGdyZWVuZGF0YS5zb2x1dGlvbnM=';
+  var _ph = 'KzM5IDM1MTY5MzA0OTU=';
+
+  window.gdRevealContact = function () {
+    var btn = document.getElementById('gd-reveal-btn');
+    var box = document.getElementById('gd-contact');
+    if (!btn || !box) return;
+
+    var em = atob(_p1) + atob(_p2);
+    var ph = atob(_ph);
+    var phTel = ph.replace(/\s/g, '');
+
+    var emailLink = document.createElement('a');
+    emailLink.className = 'inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-mono text-sm transition-colors';
+    emailLink.href = 'mailto:' + em;
+    emailLink.textContent = em;
+
+    var phoneLink = document.createElement('a');
+    phoneLink.className = 'inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-mono text-sm transition-colors';
+    phoneLink.href = 'tel:' + phTel;
+    phoneLink.textContent = ph;
+
+    box.appendChild(emailLink);
+    box.appendChild(phoneLink);
+
+    box.style.display = 'flex';
+    btn.style.display = 'none';
+  };
+})();
+</script>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════════════╗
+     ║  FOOTER                                          ║
+     ╚══════════════════════════════════════════════════╝ -->
+<!-- Footer — Tailwind CSS -->
+<footer class="relative z-10 border-t border-surface-700/30 py-8">
+  <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-xs text-surface-200/40 font-mono">
+      &copy; <time datetime="2026-03-31T02:51:12+00:00">2026</time>
+      greendata.solutions
+    </p>
+    <nav class="flex items-center gap-6">
+      <a href="/" class="text-xs text-surface-200/40 hover:text-brand-400 font-mono transition-colors">Home</a>
+      <a href="/industrial-ai-diagnostic" class="text-xs text-brand-400/70 hover:text-brand-400 font-mono transition-colors">Industrial AI Diagnostic</a>
+    </nav>
+    <p class="text-xs text-surface-200/30">All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+  <!-- Particles JS -->
+  <script src="/assets/js/particles.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+
+  <!-- Scroll reveal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var reveals = document.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(function (el) { observer.observe(el); });
+    });
+  </script>
+</body>
+
+</html>
