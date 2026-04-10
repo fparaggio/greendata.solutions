@@ -22,6 +22,19 @@
     - "Integrated payment processing and user authentication"
     - "Real-time monitoring and remote diagnostics for operators"
 
+- name: Alida
+  url: https://alida.crux.it
+  partner: Crux IT
+  partner_logo: alida_logo_white.svg
+  description: >
+    Digital platform for patient engagement and clinical trial management,
+    enabling healthcare organizations to streamline data collection, consent
+    management, and real-time monitoring of study participants.
+  highlights:
+    - "Streamlined patient onboarding and digital consent workflows"
+    - "Real-time dashboards for clinical trial monitoring"
+    - "Integrated data collection across multiple healthcare sites"
+
 - name: Superagro.pro
   url: https://superagro.pro/
   image: greenhouse.jpg
