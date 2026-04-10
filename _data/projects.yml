@@ -22,18 +22,19 @@
     - "Integrated payment processing and user authentication"
     - "Real-time monitoring and remote diagnostics for operators"
 
-- name: Alida
+- name: ALIDA
   url: https://alida.crux.it
-  partner: Crux IT
-  partner_logo: alida_logo_white.svg
+  partner: Advanced Laser Intelligence for Dynamic Assets
+  partner_logo: alida_logo_black.svg
   description: >
-    Digital platform for patient engagement and clinical trial management,
-    enabling healthcare organizations to streamline data collection, consent
-    management, and real-time monitoring of study participants.
+    Physical validation layer for wind turbine operations. ALIDA uses ground-level
+    laser sensing to measure operating turbines without shutdown, reconstructing
+    rotor geometry and delivering blade-level diagnosis to confirm what monitoring
+    platforms detect — bridging the gap between SCADA alerts and actionable root cause.
   highlights:
-    - "Streamlined patient onboarding and digital consent workflows"
-    - "Real-time dashboards for clinical trial monitoring"
-    - "Integrated data collection across multiple healthcare sites"
+    - "Blade-level imbalance detection and pitch offset quantification — no turbine shutdown"
+    - "Resolves ambiguous SCADA anomalies with physics-based structural evidence"
+    - "Targeted pitch correction and post-fix verification to prove interventions worked"
 
 - name: Superagro.pro
   url: https://superagro.pro/
